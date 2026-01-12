@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../index');
+const {app, server} = require('../index');
 
 describe("API Tests", () => {
     test("GET / should return hello world", async () => {
@@ -8,3 +8,7 @@ describe("API Tests", () => {
         expect(response.text).toBe('Hello World');
     })
 })
+
+afterAll(() => {
+    server.close();
+});
