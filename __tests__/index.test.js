@@ -1,14 +1,14 @@
-const request = require('supertest');
-const {app, server} = require('../index');
+const request = require("supertest");
+const { app, server } = require("../index");
 
 describe("API Tests", () => {
-    test("GET / should return hello world", async () => {
-        const response = await request(app).get('/');
-        expect(response.statusCode).toBe(200);
-        expect(response.text).toBe('Hello World');
-    })
-})
+  test("GET / should return hello world", async () => {
+    const response = await request(app).get("/");
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toBe("Hello World");
+  });
+});
 
 afterAll(() => {
-    server.close();
+  server.close();
 });
